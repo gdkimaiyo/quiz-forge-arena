@@ -1,0 +1,5 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}/server/quiz_env/bin/python",
+  "python.analysis.extraPaths": ["${workspaceFolder}/server"],
+  "python.terminal.activateEnvironmentInExtraTerminal": true
+}
