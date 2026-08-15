@@ -1,0 +1,11 @@
+*.pyc
+.env
+.cache/*
+.venv
+venv
+quiz_env
+__pycache__
+
+db.*
+
+*.DS_Store

@@ -1,0 +1,15 @@
+*.pyc
+.env
+.autogit
+.cache/*
+.venv
+venv
+quiz_env
+__pycache__
+
+db.*
+
+*.DS_Store
+
+# Celery Beat DB
+celerybeat-schedule.db

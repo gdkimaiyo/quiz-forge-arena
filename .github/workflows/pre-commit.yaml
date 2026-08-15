@@ -1,0 +1,45 @@
+name: Pre-Commit Checks
+
+on:
+  push:
+    branches-ignore:
+      - main
+      - master
+      - develop
+    paths:
+      - "server/**"
+
+jobs:
+  pre-commit:
+    runs-on: ubuntu-latest
+    env:
+      CI: true
+      PRECOMMIT_FROM_REF: origin/develop
+      PRECOMMIT_TO_REF: HEAD
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11", "3.12"]
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install pre-commit
+        run: pip install pre-commit
+
+      - name: Fetch latest develop
+        run: git fetch origin develop
+
+      - name: Run pre-commit hooks
+        # Run on all files in the codebase
+        # run: pre-commit run --all-files
+        # run: pre-commit run
+        # Run on modified files compared to develop branch
+        run: pre-commit run --from-ref origin/develop --to-ref HEAD

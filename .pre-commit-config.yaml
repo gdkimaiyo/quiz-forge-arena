@@ -1,0 +1,56 @@
+# Top-level configuration (excludes lockfiles across all hooks)
+exclude: '(^|/)(yarn\.lock|package-lock\.json)$'
+
+# .pre-commit-config.yaml (At root: quiz-forge-arena/.pre-commit-config.yaml)
+repos:
+  # ==================================================
+  # pre-commit-hooks: General code hygiene
+  # ==================================================
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v6.0.0
+    hooks:
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+
+  # ==================================================
+  # black: Python formatter (Scoped to server/)
+  # ==================================================
+  - repo: https://github.com/psf/black
+    rev: 24.10.0
+    hooks:
+      - id: black
+        files: ^server/
+
+  # ==================================================
+  # flake8: Python linter (Scoped to server/)
+  # ==================================================
+  - repo: https://github.com/PyCQA/flake8
+    rev: 7.1.1
+    hooks:
+      - id: flake8
+        files: ^server/
+        args: ["--config=server/.flake8"]
+        # args: ["--ignore=E203,W503,E231,E226,E128,E501,E731"]
+
+  # ==================================================
+  # commitizen: Enforce Conventional Commits
+  # ==================================================
+  - repo: https://github.com/commitizen-tools/commitizen
+    rev: v4.1.0
+    hooks:
+      # Validate commit messages to ensure they follow the Conventional Commits format:
+      # Format: <type>(<scope>): <subject>
+      # Example: "feat(auth): added password reset functionality"
+      - id: commitizen
+        stages: [commit-msg]
+
+  - repo: local
+    hooks:
+      - id: frontend-lint
+        name: Frontend Prettier & ESLint
+        entry: bash -c "cd frontend && yarn lint-staged"
+        # entry: bash -c "cd frontend && yarn test && yarn lint-staged"
+        language: system
+        files: ^frontend/
+        pass_filenames: false

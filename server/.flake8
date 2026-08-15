@@ -1,0 +1,30 @@
+# server/.flake8
+[flake8]
+# Set the maximum line length to match Black's default (88 characters)
+max-line-length = 88
+
+# Exclude auto-generated, binary, and virtual environment directories
+exclude =
+    .git,
+    __pycache__,
+    build,
+    dist,
+    *.egg-info,
+    .venv,
+    venv,
+    ENV,
+    env,
+    # Ignore Django auto-generated migrations
+    */migrations/*,
+    # Ignore manage.py if you don't want it linted
+    manage.py
+
+# Ignore specific error codes that conflict with Black formatting or low-priority style preference:
+# E203: Whitespace before ':'
+# W503: Line break occurred before a binary operator
+# E501: Line length managed by max-line-length / Black
+# E231: Missing whitespace after ',', ';', or ':'
+# E226: Missing whitespace around arithmetic operator
+# E128: Continuation line under-indented for visual indent
+# E731: Do not assign a lambda expression, use a def statement
+extend-ignore = E203, W503, E501, E231, E226, E128, E731
