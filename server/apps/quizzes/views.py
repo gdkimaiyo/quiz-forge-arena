@@ -50,6 +50,5 @@ class QuizView(APIView):
         except Exception as e:
             print(f"GET_QUIZES_ERROR: {str(e)}")
             return Response(
-                {"message": "Error fetching quizes"},
-                status=status.HTTP_400_BAD_REQUEST,
+                {"message": "Error fetching quizes"}, status=status.HTTP_400_BAD_REQUEST
             )
