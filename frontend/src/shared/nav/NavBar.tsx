@@ -61,7 +61,8 @@ export default function NavBar() {
                 key={item.id}
                 asChild
                 fontSize={"14px"}
-                color={path === item.link ? "var(--brand-primary)" : "var(--brand-slate)"}
+                fontWeight={400}
+                color={path === item.link ? "var(--brand-primary)" : "var(--brand-slate-dark)"}
                 _hover={{ color: "var(--brand-primary)", textDecoration: "none" }}
               >
                 <RouterLink to={item.link}>{item.name}</RouterLink>

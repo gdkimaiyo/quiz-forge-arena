@@ -8,9 +8,9 @@
 [![Frontend: React](https://img.shields.io/badge/frontend-React_18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 [![Backend: Django](https://img.shields.io/badge/backend-Django_DRF-092E20?logo=django&logoColor=white)](https://www.djangoproject.com/)
 
-An interactive, real-time full-stack quiz platform built with React, Chakra UI v3, Django REST Framework, and PostgreSQL.
+An interactive, real-time full-stack quiz platform built with React, Chakra UI v3, Django REST Framework and MongoDB.
 
-QuizForgeArena is a scheduled, competitive quiz platform where users take timed quizzes, earn points based on their performance, build streaks, unlock achievements, and compete on leaderboards.
+QuizForgeArena is a scheduled, competitive quiz platform where users take timed quizzes, earn points based on their performance, build streaks, unlock achievements and compete on leaderboards.
 
 ## Project Structure
 
@@ -59,7 +59,7 @@ Clone the repository:
 
 ```bash
 git clone https://github.com/gdkimaiyo/quiz-forge-arena.git
-cd QuizForgeArena
+cd quiz-forge-arena
 ```
 
 The frontend and backend are maintained as separate applications. Follow the setup instructions in each directory's README.

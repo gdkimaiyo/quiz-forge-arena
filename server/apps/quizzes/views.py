@@ -20,10 +20,7 @@ from apps.quizzes.serializers import QuizesSerializer
 
 class QuizView(APIView):
     """
-    Returns a list of quizes
-
     Retrieve one or more quizes.
-
     If an 'id' is provided, return that specific quiz.
     Otherwise, return all quizes
     """

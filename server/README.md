@@ -72,6 +72,7 @@ pre-commit install --hook-type commit-msg
 ```
 
 2. Stage files and test hooks (OPTIONAL):
+- `pre-commit` only inspects files tracked by Git. Stage your untracked changes first before running manual checks.
 ```sh
 # Stage untracked files
 git add .
@@ -81,8 +82,6 @@ pre-commit run --all-files
 ```
 
 3. Auto update pre-commit (OPTIONAL):
-
-- `pre-commit` only inspects files tracked by Git. Stage your untracked changes first before running manual checks.
 ```sh
 pre-commit autoupdate --repo https://github.com/pre-commit/pre-commit-hooks
 ```
