@@ -4,7 +4,7 @@
 [![Linter: ESLint](https://img.shields.io/badge/linter-eslint-4B32C3.svg?logo=eslint&logoColor=white)](https://eslint.org/)
 [![Frontend: React](https://img.shields.io/badge/frontend-React_18-61DAFB?logo=react&logoColor=black)](https://react.dev/)
 
-The Frontend app built with React, TypeScript, Chakra UI V3, React Router and REST APIs Integration.
+The Frontend app built with React, TypeScript, Chakra UI V3, React Router and REST APIs Integration
 
 ## React + TypeScript + Vite
 
