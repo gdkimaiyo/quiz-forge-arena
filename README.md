@@ -111,3 +111,5 @@ The project is under active development. Watch this space!
 ## License
 
 Copyright © 2026 QuizForgeArena. All rights reserved.
+
+[License](LICENSE)
