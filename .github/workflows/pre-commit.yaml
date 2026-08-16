@@ -26,20 +26,21 @@ jobs:
         with:
           fetch-depth: 2
 
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v4
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      # Single Node setup for linting tools across all Python runs
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "yarn"
           cache-dependency-path: "frontend/yarn.lock"
 
       - name: Install Node dependencies
         run: yarn --cwd frontend install --frozen-lockfile
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v4
-        with:
-          python-version: ${{ matrix.python-version }}
 
       - name: Install pre-commit
         run: pip install pre-commit
