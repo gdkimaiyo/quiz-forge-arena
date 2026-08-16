@@ -110,7 +110,7 @@ export default function LandingPage() {
             color="white"
             px={8}
             py={5}
-            borderRadius="24px"
+            borderRadius="full"
             fontSize="16px"
             fontWeight="700"
             boxShadow="0 4px 14px rgba(60, 116, 186, 0.3)"
@@ -132,7 +132,7 @@ export default function LandingPage() {
             borderColor="var(--brand-gray-border)"
             px={8}
             py={5}
-            borderRadius="24px"
+            borderRadius="full"
             fontSize="16px"
             fontWeight="600"
             _hover={{

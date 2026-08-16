@@ -16,7 +16,7 @@ exclude =
     env,
     # Ignore Django auto-generated migrations
     */migrations/*,
-    # Ignore manage.py if you don't want it linted
+    # Ignore manage.py
     manage.py
 
 # Ignore specific error codes that conflict with Black formatting or low-priority style preference:
